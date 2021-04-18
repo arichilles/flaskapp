@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Demo Crud</title>
+    </head>
+
+    <body>
+        <h2>Demo CRUD</h2>
+
+        <table border="1">
+            <tr>
+                <th width='50'>Kode</th>
+                <th width='200'>Judul</th>
+                <th width='150'>Penulis</th>
+                <th width='60'>Ubah</th>
+                <th width='60'>Hapus</th>
+            </tr>
+            {% for row in container %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td><a href="http://127.0.0.1:5000/edit/{{row[0]}}">Ubah</a></td>
+                <td><a href="http://127.0.0.1:5000/delete/{{row[0]}}">Hapus</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p><a href="http://127.0.0.1:5000/add">Tambah Data</a></p>
+    </body>
+</html>
